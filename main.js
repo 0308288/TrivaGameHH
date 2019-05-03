@@ -1,3 +1,4 @@
+
 var panel = $("#quiz-area");
 
 var countStartNumber = 30;
@@ -18,7 +19,7 @@ var countStartNumber = 30;
         answers: ["1991", "1999", "1997", "1993"],
         correctAnswer: "1993",
         image:"assets\"sandlot.jpg"
-    },
+    }
 
 ];
 
@@ -35,7 +36,7 @@ var game = {
     
     countdown: function() {
 
-        game.correct--;
+        game.counter--;
         $("#counter-number").html(game.counter);
         if (game.counter == 0){
 
@@ -179,3 +180,25 @@ var game = {
     }
 
 };
+
+
+// CLICK EVENTS
+// -----------------------------------------------------------------------------------
+$(document).on("click", "start-over", fucntion() {
+
+    game.reset();
+
+});
+
+$(document).on("click", ".answer-button", function(e) {
+
+    game.clicked(e);
+
+});
+
+$(document).on("click", "#start", function() {
+
+    $("#sub-wrapper").prepend("<h2>Time Remaining: <span id='counter-number'>30</span>Seconds</h2>");
+    game.loadQuestion();
+
+});
