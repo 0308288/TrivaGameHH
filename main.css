@@ -5,7 +5,7 @@ body {
 
 body {
     text-align: center;
-    /* background-image: */
+    background-image: url("https://image.freepik.com/free-vector/best-time-90s-background_24908-132.jpg");
 }
 
 #wrapper {
@@ -14,7 +14,7 @@ body {
     height: 95%;
     box-sizing: border-box;
     margin: 2.5% auto;
-    background-color: salmon;
+    background-color: transparent;
 
 }
 

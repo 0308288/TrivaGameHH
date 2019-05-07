@@ -11,17 +11,17 @@ var countStartNumber = 30;
         question: "What was the first full length CGI movie?",
         answers: ["A Bug's Life", "Monsters Inc.", "Toy Story", "The Lion King"],
         correctAnswer: "Toy Story",
-        image:"assets\toyStory.jpg"
+        image:"assets/toyStory.jpg"
     },
 
     {
         question: "In what year did the movie Sandlot come out?",
         answers: ["1991", "1999", "1997", "1993"],
         correctAnswer: "1993",
-        image:"assets\"sandlot.jpg"
+        image:"assets/sandlot.jpg"
     }
 
-];
+]
 
 // Variable to hold our setInterval
 var timer;
@@ -38,7 +38,7 @@ var game = {
 
         game.counter--;
         $("#counter-number").html(game.counter);
-        if (game.counter == 0){
+        if (game.counter === 0){
 
             console.log("TIME'S UP");
             game.timeUp()                                                                            
@@ -49,12 +49,12 @@ var game = {
 
     loadQuestion: function() {
         
-        timer = setInterval(game.counter, 1000);
-        panel.html("<h2>" + questions[this.currentQuestion].questions + "</h2>");
+        timer = setInterval(game.countdown, 1000);
+        panel.html("<h2>" + questions[this.currentQuestion].question + "</h2>");
         for (var i = 0; i < questions[this.currentQuestion].answers.length; i++) {
-            panel.append("<button class='answer-button' id='button' data-name=''" +
-            questions[this.currentQuestion].answers[i]) + "'>'" +
-            questions[this.currentQuestion].answers[i] + "</button>";
+            panel.append("<button class='answer-button' id='button' data-name='" +
+            questions[this.currentQuestion].answers[i] + "'>" +
+            questions[this.currentQuestion].answers[i] + "</button>");
 
         }
 
@@ -78,7 +78,7 @@ var game = {
         panel.append("<h3>The Correct Answer was: " + questions[this.currentQuestion].correctAnswer);
         panel.append("<img src='" + questions[this.currentQuestion].image + "'/>");
 
-        if (game.currentQuestion === questions.length -1) {
+        if (game.currentQuestion === questions.length - 1) {
 
             setTimeout(game.results, 3 * 1000);           
 
@@ -98,7 +98,7 @@ var game = {
 
         panel.html("<h2>All done, here's how you did!</h2>");
 
-        $("counter-number").html(game.counter);
+        $("#counter-number").html(game.counter);
 
         panel.append("<h3>Correct Answers: " + game.correct + "</h3>");
         panel.append("<h3>Incorrect Answers: " + game.incorrect + "</h3>");
@@ -134,7 +134,7 @@ var game = {
         panel.append("<h3>The correct answer was: " + questions[game.currentQuestion].correctAnswer + "</h3>");
         panel.append("<img src='" + questions[game.currentQuestion].image + "' />")
 
-        if (game.currentQuestion === questions.length -1) {
+        if (game.currentQuestion === questions.length - 1) {
 
             setTimeout(game.results, 3 * 1000);           
 
@@ -154,7 +154,7 @@ var game = {
         clearInterval(timer);
 
         panel.html("<h2>Correct!</h2>");
-        panel.append("<img src='" + questions[game.currentQuestion].image + "' />")
+        panel.append("<img src='" + questions[game.currentQuestion].image + "'/>")
 
         if (game.currentQuestion === questions.length -1) {
 
@@ -184,7 +184,7 @@ var game = {
 
 // CLICK EVENTS
 // -----------------------------------------------------------------------------------
-$(document).on("click", "start-over", fucntion() {
+$(document).on("click", "#start-over", function() {
 
     game.reset();
 
@@ -198,7 +198,7 @@ $(document).on("click", ".answer-button", function(e) {
 
 $(document).on("click", "#start", function() {
 
-    $("#sub-wrapper").prepend("<h2>Time Remaining: <span id='counter-number'>30</span>Seconds</h2>");
+    $("#sub-wrapper").prepend("<h2>Time Remaining: <span id='counter-number'>30 </span> Seconds</h2>");
     game.loadQuestion();
 
 });
