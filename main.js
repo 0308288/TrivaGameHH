@@ -19,7 +19,29 @@ var countStartNumber = 30;
         answers: ["1991", "1999", "1997", "1993"],
         correctAnswer: "1993",
         image:"assets/sandlot.jpg"
+    }, 
+
+    {
+        question: "What movie had the highest domestic gross totals in the 90s?",
+        answers: ["Jurrasic Park", "The Lion King", "Home Alone", "Titanic"],
+        correctAnswer: "Titanic",
+        image:"assets/titanic.jpg"
+    },
+
+    {
+        question: "What NFL team won the most Super Bowls in the 90s?",
+        answers: ["Dallas Cowboys", "San Francisco 49ers", "Denver Broncos", "Green Bay Packers"],
+        correctAnswer: "Dallas Cowboys",
+        image:"assets/cowboys.jpg"
+    },
+
+    {
+        question: "What MLB team won the most World Series titles in the 90s?",
+        answers: ["Atlanta Braves", "New York Yankees", "Toronto Blue Jays", "Florida Marlins"],
+        correctAnswer: "New York Yankees",
+        image:"assets/yankees.jpg"
     }
+
 
 ]
 
